@@ -4,3 +4,10 @@
     Topik   : Responsi 2 - Subtract Expression
 */
 
+#include "Expression.hpp"
+
+class SubstractExpression : public BinaryExpression {
+    public:
+        SubstractExpression(Expression* e1, Expression* e2);
+        int solve();
+};

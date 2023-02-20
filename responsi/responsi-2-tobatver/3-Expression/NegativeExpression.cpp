@@ -5,3 +5,9 @@
 */
 
 #include "NegativeExpression.hpp"
+
+NegativeExpression::NegativeExpression(Expression* e) : UnaryExpression(e) {}
+
+int NegativeExpression::solve() {
+    return (-1) * this->x->solve();
+}

@@ -4,3 +4,10 @@
     Topik   : Responsi 2 - Negative Expression
 */
 
+#include "Expression.hpp"
+
+class NegativeExpression : public UnaryExpression {
+    public:
+        NegativeExpression(Expression* e);
+        int solve();
+};

@@ -1,4 +1,6 @@
 #include "ArtistUser.h"
+#include <iostream>
+using namespace std;
 
 //ctor, parameter: nama pengguna
 ArtistUser::ArtistUser(char*) {
