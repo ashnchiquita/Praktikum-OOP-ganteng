@@ -1,5 +1,5 @@
 /*  NIM     : 13521129
-    name    : Chiquita Ahsanunnisa
+    Nama    : Chiquita Ahsanunnisa
     Tanggal : 27 Februari 2023
     Topik   : Latihan Function Template - PrintArray
 */
@@ -58,5 +58,5 @@ int main()
 
 /* Bagaimana kalau yang ingin dicetak adalah Point?
 
-Jawaban: Bisa, jika method-method yang dibutuhkan (operator <<) 
+Jawaban: Bisa, jika method-method yang dibutuhkan (contohnya operator <<) 
 pada fungsi PrintArray tersedia pada kelas Point */

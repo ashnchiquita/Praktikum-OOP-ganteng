@@ -1,5 +1,5 @@
 /*  NIM     : 13521129
-    name    : Chiquita Ahsanunnisa
+    Nama    : Chiquita Ahsanunnisa
     Tanggal : 19 Februari 2023
     Topik   : Latihan Inheritance - Kendaraan.hpp
 */

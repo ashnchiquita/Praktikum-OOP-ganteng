@@ -1,5 +1,5 @@
 /*  NIM     : 13521129
-    name    : Chiquita Ahsanunnisa
+    Nama    : Chiquita Ahsanunnisa
     Tanggal : 27 Februari 2023
     Topik   : Latihan Function Template - MinArray
 */
@@ -11,11 +11,14 @@ using namespace std;
 template <class T>
 T MinArray(T arr[], int N)
 {
-    // PREKONDISI: minimal array x terdiri atas 1 elemen
+    // PREKONDISI: minimal array arr terdiri atas 1 elemen
     T minVal = arr[0];
 
     for (int i = 1; i < N; i++) {
-        minVal = arr[i] < minVal ? arr[i] : minVal;
+        if (arr[i] < minVal)
+        {
+            minVal = arr[i];
+        }
     }
 
     return minVal;
@@ -45,5 +48,5 @@ int main()
 /* Didefinisikan kelas Jam HH:MM:SS.
 Apakah mungkin MinArray digunakan untuk data bertype Jam?
 
-Jawaban: Mungkin, jika method-method yang dibutuhkan (operator <, =) 
+Jawaban: Mungkin, jika method-method yang dibutuhkan (contohnya operator <, =) 
 pada fungsi MinArray tersedia pada kelas Jam */
