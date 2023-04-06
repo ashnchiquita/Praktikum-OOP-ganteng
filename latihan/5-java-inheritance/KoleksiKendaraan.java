@@ -17,21 +17,29 @@ public class KoleksiKendaraan {
         buffer = new Kendaraan[size];
         nEff = 0;
     }
+    public KoleksiKendaraan(KoleksiKendaraan other) {
+        this.nEff = other.nEff;
+        this.buffer = new Kendaraan[other.buffer.length];
+        for (int i = 0; i < this.nEff; i++) {
+            this.buffer[i] = other.buffer[i].copy();
+        }
+    }
 
     // OTHERS
     public void printAll() {
         for (int i = 0; i < nEff; i++) {
-            System.out.println(buffer[i]);
+            buffer[i].printInfo();
+            System.out.println("-------------------------------");
         }
     }
     public void insert(Kendaraan kendaraan) {
-        buffer[nEff] = kendaraan;
+        buffer[nEff] = kendaraan.copy();
         nEff++;
     }
     public void insert(KoleksiKendaraan other){
         int batas = (this.buffer.length > nEff + other.nEff ? other.nEff : this.buffer.length - this.nEff);
         for (int i = 0; i < batas; i++) {
-            this.buffer[this.nEff + i] = other.buffer[i];
+            this.buffer[this.nEff + i] = other.buffer[i].copy();
         }
         this.nEff += batas;
     }

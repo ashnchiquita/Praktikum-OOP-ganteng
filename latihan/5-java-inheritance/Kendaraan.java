@@ -4,7 +4,7 @@
     Topik   : Latihan Java Inheritance - Kendaraan.java
 */
 
-public abstract class Kendaraan {
+abstract public class Kendaraan {
     private int nomor, tahun;
     private String merk;
 
@@ -14,7 +14,6 @@ public abstract class Kendaraan {
         tahun = 0;
         merk = "XXX";
     }
-
     public Kendaraan(int nomor, int tahun, String merk) {
         this.nomor = nomor;
         this.tahun = tahun;
@@ -31,4 +30,5 @@ public abstract class Kendaraan {
         System.out.println("Merk           : " + merk);
     }
     abstract public int biayaSewa(int lamaSewa);
+    abstract public Kendaraan copy();
 }

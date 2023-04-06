@@ -16,6 +16,10 @@ public class Bus extends Kendaraan {
         super(nomor, tahun, merk);
         this.kapasitas = kapasitas;
     }
+    public Bus(Bus other) {
+        super(other.getNomor(), other.getTahun(), other.getMerk());
+        this.kapasitas = other.kapasitas;
+    }
 
     // OTHERS
     @Override
@@ -26,4 +30,6 @@ public class Bus extends Kendaraan {
     }
     @Override
     public int biayaSewa(int lamaSewa) { return 1000000 * lamaSewa; }
+    @Override
+    public Kendaraan copy() { return new Bus(this); }
 }

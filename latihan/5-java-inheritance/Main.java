@@ -18,17 +18,16 @@ public class Main {
         System.out.println("Ctor");
         kk.printAll();
 
-        System.out.println("Clone");
-        KoleksiKendaraan cp = KoleksiKendaraan(kk);
+        System.out.println("\nClone");
+        KoleksiKendaraan cp = new KoleksiKendaraan(kk);
         cp.printAll();
 
-        System.out.println("Assign");
-        KoleksiKendaraan as;
-        as = cp;
-        as.printAll();
-
-        System.out.println("Biaya sewa x : " + x.biayaSewa(10));
-        System.out.println("Biaya sewa y : " + y.biayaSewa(10));
-        System.out.println("Biaya sewa z : " + z.biayaSewa(10));
+        System.out.println("\nInsert");
+        kk.insert(cp);
+        kk.printAll();
+        
+        System.out.println("Biaya sewa x   : " + x.biayaSewa(10));
+        System.out.println("Biaya sewa y   : " + y.biayaSewa(10));
+        System.out.println("Biaya sewa z   : " + z.biayaSewa(10));
     }
 }

@@ -16,14 +16,20 @@ public class Mobil extends Kendaraan {
         super(nomor, tahun, merk);
         this.supir = supir;
     }
+    public Mobil(Mobil other) {
+        super(other.getNomor(), other.getTahun(), other.getMerk());
+        this.supir = other.supir;
+    }
 
     // OTHERS
     @Override
     public void printInfo() {
         super.printInfo();
-        System.out.println("Kategori      : Mobil");
+        System.out.println("Kategori       : Mobil");
         System.out.println("Supir          : " + supir);
     }
     @Override
     public int biayaSewa(int lamaSewa) { return 500000 * lamaSewa; }
+    @Override
+    public Kendaraan copy() { return new Mobil(this); }
 }
