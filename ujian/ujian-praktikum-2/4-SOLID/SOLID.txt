@@ -1,0 +1,50 @@
+NIM			: 13521129
+Nama     	: Chiquita Ahsanunnisa
+Tanggal		: 17 Mei 2023
+Topik		: Ujian Praktikum 2
+Deskripsi	: SOLID
+
+1. Product diubah jadi abstract class
+Prinsip SOLID yang dipenuhi:
+S: Karena "Product" secara konseptual merupakan objek yang abstrak, tidak bisa diinstansiasi langsung
+O: Karena jika ada jenis produk baru dibutuhkan, cukup mengextend dari kelas Product
+
+2. List<Product> shoppingCart dipindahkan jadi kelas baru yaitu ShoppingCart
+Prinsip SOLID yang dipenuhi:
+S: Karena shoppingCart itu di luar tanggung jawabnya Product, jadi dibuat kelas baru untuk tanggung jawab tersebut
+
+3. method calculateTax() pada Product dihapus. Dijadikan interface
+Prinsip SOLID yang dipenuhi:
+I: Karena tidak semua produk memiliki Tax, hanya beberapa (contohnya, di sini FoodProduct tidak punya Tax, ElectronicsProduct punya), artinya Product seharusnya tidak punya method calculateTax()
+Dijadikan interface agar kelas yang membutuhkan (ElectronicsProducts misalnya), dapat mengimplementasikan calculateTax()
+
+4. method calculateTax() padaFoodProduct dihapus
+Prinsip SOLID yang dipenuhi:
+I: Karena FoodProduct tidak punya Tax
+
+5. ElectronicsProduct mengimplement interface HasTax, sehingga memiliki method calculateTax()
+Prinsip SOLID yang dipenuhi:
+I: Karena ElectronicsProduct punya Tax
+
+6. PaymentProcessor diubah jadi abstract class Payment dan kelas anaknya yaitu : CreditCard, DebitCard, Cash
+Prinsip SOLID yang dipenuhi:
+S: Mengimplementasikan method bayar yang spesifik itu bukan tanggung jawab kelas Payment
+O: Karena jika ada jenis pembayaran baru dibutuhkan, cukup mengextend dari kelas Payment
+L: Anak dari kelas Payment dapat menggantikan Payment
+
+7. Method processPaymentWith... jadi method abstrak di kelas Payment dan implementasi tergantung kelas anaknya
+Prinsip SOLID yang dipenuhi:
+S: Setiap kelas anak dapat mengimplementasikan method bayar sesuai dirinya sendiri
+O: Karena jika ada jenis pembayaran baru dibutuhkan, cukup mengextend kelas Payment dan mengimplementasikan method ini
+
+8. Konstruktor Order ditambah parameter Payment payment yang bisa polymorph sesuai anak kelas Payment
+Prinsip SOLID yang dipenuhi:
+L: Anak dari kelas Payment dapat menggantikan Payment
+
+9. Method checkout pada kelas Order jadi tidak menggunakan if-else, tapi memanfaatkan polymorphism
+Prinsip SOLID yang dipenuhi:
+S: Kelas order tidak memiliki tanggung jawab untuk menentukan (melalui if-else) jenis method yang dibutuhkan, seharusnya dia cukup memanggil method untuk bayar saja
+L: Anak dari kelas Payment dapat menggantikan Payment
+D: Ketergantungan pada parameter String chekoutMethod berubah jadi menyesuaikan kelas reference Payment pada paymentMethod
+
+Sisanya ada sedikit perubahan nama karena ada perubahan kelas dan interface, namun dirasa sudah representatif.
